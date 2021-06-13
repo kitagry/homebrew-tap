@@ -8,14 +8,8 @@ class Kj < Formula
   sha256 "21b08bdc3df1bf6fc907fba7530dd51e5fe413a17c22eecfd8d9a9a55999c124"
   license ""
 
-  # depends_on "cmake" => :build
-
   def install
-    # ENV.deparallelize  # if your formula fails when building in parallel
-    # Remove unrecognized options if warned by configure
-    # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
-    system "./configure", *std_configure_args, "--disable-silent-rules"
-    # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    bin.install 'kj'
   end
 
   test do
