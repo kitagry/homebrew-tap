@@ -4,8 +4,8 @@
 class Kj < Formula
   desc "Edit and create Kubernetes job from cronjob template using your EDITOR"
   homepage ""
-  url "https://github.com/kitagry/kj/releases/download/0.0.1/kj-0.0.1-darwin-amd64.tar.gz"
-  sha256 "21b08bdc3df1bf6fc907fba7530dd51e5fe413a17c22eecfd8d9a9a55999c124"
+  url "https://github.com/kitagry/kj/releases/download/0.1.0/kj-0.1.0-darwin-amd64.tar.gz"
+  sha256 "514438b2204aa8b62aeeb3260ceed94d9ef0d29e3ae0f3d31a73c624217e0d3b"
   license ""
 
   def install
