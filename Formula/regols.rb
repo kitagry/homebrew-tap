@@ -5,20 +5,20 @@
 class Regols < Formula
   desc "OPA Rego language server"
   homepage "https://github.com/kitagry/regols"
-  version "0.2.0"
+  version "0.2.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/kitagry/regols/releases/download/0.2.0/regols_0.2.0_darwin_amd64.tar.gz"
-      sha256 "8e966e0465d1b3eb8443494352feb062b26e05f270fd34dcf7876b76ba63e101"
+      url "https://github.com/kitagry/regols/releases/download/v0.2.1/regols_0.2.1_darwin_amd64.tar.gz"
+      sha256 "82698d6c7051a146a7ab9991c62197629039a31cd5599d9423560d03b058f51e"
 
       def install
         bin.install "regols"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/kitagry/regols/releases/download/0.2.0/regols_0.2.0_darwin_arm64.tar.gz"
-      sha256 "d75eaa5b82d3386f3d8dc87b2a2b78fa2d51c5643b733032d03f3303ac40495c"
+      url "https://github.com/kitagry/regols/releases/download/v0.2.1/regols_0.2.1_darwin_arm64.tar.gz"
+      sha256 "b9200c39ae1578d4cc3a5691e03a49f1edf64b82575caea75a9d33bb5b813729"
 
       def install
         bin.install "regols"
@@ -27,17 +27,17 @@ class Regols < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/kitagry/regols/releases/download/0.2.0/regols_0.2.0_linux_amd64.tar.gz"
-      sha256 "00cb6dd461e87d580db0d425fed47ee52c85016b53936c36863d0d380c8b02bf"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kitagry/regols/releases/download/v0.2.1/regols_0.2.1_linux_arm64.tar.gz"
+      sha256 "93194900a2ed236b681fa94296dbaf08958fc13626cfccb005afe109df2f8fb7"
 
       def install
         bin.install "regols"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kitagry/regols/releases/download/0.2.0/regols_0.2.0_linux_arm64.tar.gz"
-      sha256 "eafe1e91e10806da6978da2186e0669b83b0c5cc37a008345f5f00010e713bf9"
+    if Hardware::CPU.intel?
+      url "https://github.com/kitagry/regols/releases/download/v0.2.1/regols_0.2.1_linux_amd64.tar.gz"
+      sha256 "53606dac6be203022f144cf78a41e310a4ef99ce5f89681f3c75ebbac2ef2ad3"
 
       def install
         bin.install "regols"
