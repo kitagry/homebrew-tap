@@ -5,20 +5,20 @@
 class Regols < Formula
   desc "OPA Rego language server"
   homepage "https://github.com/kitagry/regols"
-  version "0.2.1"
+  version "0.2.2"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/kitagry/regols/releases/download/v0.2.1/regols_0.2.1_darwin_amd64.tar.gz"
-      sha256 "82698d6c7051a146a7ab9991c62197629039a31cd5599d9423560d03b058f51e"
+    if Hardware::CPU.arm?
+      url "https://github.com/kitagry/regols/releases/download/v0.2.2/regols_0.2.2_darwin_arm64.tar.gz"
+      sha256 "d1bb4e4569d95ffb4b5783c12f445f78aac0337ea809fe60ad6b3558df33bb14"
 
       def install
         bin.install "regols"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/kitagry/regols/releases/download/v0.2.1/regols_0.2.1_darwin_arm64.tar.gz"
-      sha256 "b9200c39ae1578d4cc3a5691e03a49f1edf64b82575caea75a9d33bb5b813729"
+    if Hardware::CPU.intel?
+      url "https://github.com/kitagry/regols/releases/download/v0.2.2/regols_0.2.2_darwin_amd64.tar.gz"
+      sha256 "64230a08d2514c3306e3a7c6d2c0acea819a7b543b5c8ba536e5f6593e615c84"
 
       def install
         bin.install "regols"
@@ -27,17 +27,17 @@ class Regols < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kitagry/regols/releases/download/v0.2.1/regols_0.2.1_linux_arm64.tar.gz"
-      sha256 "93194900a2ed236b681fa94296dbaf08958fc13626cfccb005afe109df2f8fb7"
+    if Hardware::CPU.intel?
+      url "https://github.com/kitagry/regols/releases/download/v0.2.2/regols_0.2.2_linux_amd64.tar.gz"
+      sha256 "1fbba0af62ed1f77c732f5972339a5a39a81e29df2fba3e1fb07302d02fab9ec"
 
       def install
         bin.install "regols"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/kitagry/regols/releases/download/v0.2.1/regols_0.2.1_linux_amd64.tar.gz"
-      sha256 "53606dac6be203022f144cf78a41e310a4ef99ce5f89681f3c75ebbac2ef2ad3"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kitagry/regols/releases/download/v0.2.2/regols_0.2.2_linux_arm64.tar.gz"
+      sha256 "1afebe0ed9dacd4d5f4399d36c10a4b2190ea63d59a30be39e06e8e6652da285"
 
       def install
         bin.install "regols"
