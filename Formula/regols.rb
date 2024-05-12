@@ -5,20 +5,20 @@
 class Regols < Formula
   desc "OPA Rego language server"
   homepage "https://github.com/kitagry/regols"
-  version "0.2.2"
+  version "0.2.3"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/kitagry/regols/releases/download/v0.2.2/regols_0.2.2_darwin_arm64.tar.gz"
-      sha256 "d1bb4e4569d95ffb4b5783c12f445f78aac0337ea809fe60ad6b3558df33bb14"
+    on_intel do
+      url "https://github.com/kitagry/regols/releases/download/v0.2.3/regols_0.2.3_Darwin_64bit.tar.gz"
+      sha256 "000dde347522d08ef89d3739e3df3faadfa6feaae0cd11c1b6ba31f13950192d"
 
       def install
         bin.install "regols"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/kitagry/regols/releases/download/v0.2.2/regols_0.2.2_darwin_amd64.tar.gz"
-      sha256 "64230a08d2514c3306e3a7c6d2c0acea819a7b543b5c8ba536e5f6593e615c84"
+    on_arm do
+      url "https://github.com/kitagry/regols/releases/download/v0.2.3/regols_0.2.3_Darwin_ARM64.tar.gz"
+      sha256 "0cd5282ac24941373693f8feb828fbc435e825bce85225e0c6cdf817334ddd6a"
 
       def install
         bin.install "regols"
@@ -27,20 +27,24 @@ class Regols < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/kitagry/regols/releases/download/v0.2.2/regols_0.2.2_linux_amd64.tar.gz"
-      sha256 "1fbba0af62ed1f77c732f5972339a5a39a81e29df2fba3e1fb07302d02fab9ec"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/kitagry/regols/releases/download/v0.2.3/regols_0.2.3_Linux_64bit.tar.gz"
+        sha256 "d028c4a8fef868f9eb50bfa317552e629903f0e43cf606949dc0fb2d1bbf5441"
 
-      def install
-        bin.install "regols"
+        def install
+          bin.install "regols"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kitagry/regols/releases/download/v0.2.2/regols_0.2.2_linux_arm64.tar.gz"
-      sha256 "1afebe0ed9dacd4d5f4399d36c10a4b2190ea63d59a30be39e06e8e6652da285"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/kitagry/regols/releases/download/v0.2.3/regols_0.2.3_Linux_ARM64.tar.gz"
+        sha256 "d232946d42a3de15c76bdf7ae6e2313cf97a963b3028f44b4d936628c1b35c64"
 
-      def install
-        bin.install "regols"
+        def install
+          bin.install "regols"
+        end
       end
     end
   end
