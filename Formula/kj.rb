@@ -5,20 +5,20 @@
 class Kj < Formula
   desc "Edit and create Kubernetes job from cronjob template using your EDITOR"
   homepage "https://github.com/kitagry/kj"
-  version "0.3.1"
+  version "0.4.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/kitagry/kj/releases/download/0.3.1/kj_0.3.1_darwin_amd64.tar.gz"
-      sha256 "5a041b24a9bacfdf61477eb78a059eeee0f450437a2cbb0b9c7666f2dfd440ec"
+    on_intel do
+      url "https://github.com/kitagry/kj/releases/download/0.4.0/kj_0.4.0_Darwin_64bit.tar.gz"
+      sha256 "224a8cbdf6c22b64cbcff7373252b044cd59465d823499d1f88d98a878ac9971"
 
       def install
         bin.install "kj"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/kitagry/kj/releases/download/0.3.1/kj_0.3.1_darwin_arm64.tar.gz"
-      sha256 "a3f84512cb7d8a70a52716273e782583355135f83056288b76b641b8a2f460e4"
+    on_arm do
+      url "https://github.com/kitagry/kj/releases/download/0.4.0/kj_0.4.0_Darwin_ARM64.tar.gz"
+      sha256 "e0f80bb43371cbc19e6e0ef6dbb9c0c0aabaa0da2f583ffc03293a5b74d21639"
 
       def install
         bin.install "kj"
@@ -27,20 +27,24 @@ class Kj < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/kitagry/kj/releases/download/0.3.1/kj_0.3.1_linux_amd64.tar.gz"
-      sha256 "07abe8729c867025c9e0ec10be6c9ff9c89109d56abed228eb8eadf8e3a43794"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/kitagry/kj/releases/download/0.4.0/kj_0.4.0_Linux_64bit.tar.gz"
+        sha256 "76fd7e75883ceae7649258a628cb8a512106147789c09c9074845f219b18421b"
 
-      def install
-        bin.install "kj"
+        def install
+          bin.install "kj"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kitagry/kj/releases/download/0.3.1/kj_0.3.1_linux_arm64.tar.gz"
-      sha256 "e3c8ce9e51465ada5932d1d70a3f940e847ccb4c0e615f120bd6a23c23f3b7dd"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/kitagry/kj/releases/download/0.4.0/kj_0.4.0_Linux_ARM64.tar.gz"
+        sha256 "9e4cf544d56439d67b75564b4773e596f0c9fede249397432d0fd1a8834137e7"
 
-      def install
-        bin.install "kj"
+        def install
+          bin.install "kj"
+        end
       end
     end
   end
