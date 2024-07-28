@@ -10,7 +10,7 @@ class Regols < Formula
   on_macos do
     on_intel do
       url "https://github.com/kitagry/regols/releases/download/v0.2.4/regols_0.2.4_Darwin_64bit.tar.gz"
-      sha256 "7e951714fe8416fbcbd2cf4b6027b6c3f7fb27b830d586a59cfbe21cbc865cd0"
+      sha256 "ac45c9516adb839f364d049bbc884952498cd4a061bf8ad9e6d42c2b59011c4e"
 
       def install
         bin.install "regols"
@@ -18,7 +18,7 @@ class Regols < Formula
     end
     on_arm do
       url "https://github.com/kitagry/regols/releases/download/v0.2.4/regols_0.2.4_Darwin_ARM64.tar.gz"
-      sha256 "4b2a08fce3ea99ba39f074636cdaaa1fb9ac96cb739ebfdc900877254a3395b6"
+      sha256 "f30bee42812d5622e9f2f37b4627795ae8284ad44ef3e34ceb6db88d6769efe7"
 
       def install
         bin.install "regols"
@@ -30,7 +30,7 @@ class Regols < Formula
     on_intel do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/kitagry/regols/releases/download/v0.2.4/regols_0.2.4_Linux_64bit.tar.gz"
-        sha256 "a552f1a620a07d0454006041d06944cec63483c71ebc1bf3af0b0672e19bbfa6"
+        sha256 "42bcc37207d529cc33291df4113acc4447c01ae3a594ca3d440d96818e081fc0"
 
         def install
           bin.install "regols"
@@ -40,7 +40,7 @@ class Regols < Formula
     on_arm do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/kitagry/regols/releases/download/v0.2.4/regols_0.2.4_Linux_ARM64.tar.gz"
-        sha256 "380fbf468cec7390320c4383d9283112ff03dbae1b4875dbe51e4cf3e051f8d4"
+        sha256 "950e6fbbb5145c13bab20ccd7fc9c7b8bb56741a17b63424a2657e5efdb13a59"
 
         def install
           bin.install "regols"
