@@ -5,20 +5,20 @@
 class Kj < Formula
   desc "Edit and create Kubernetes job from cronjob template using your EDITOR"
   homepage "https://github.com/kitagry/kj"
-  version "0.4.0"
+  version "0.5.0"
 
   on_macos do
-    on_intel do
-      url "https://github.com/kitagry/kj/releases/download/0.4.0/kj_0.4.0_Darwin_64bit.tar.gz"
-      sha256 "224a8cbdf6c22b64cbcff7373252b044cd59465d823499d1f88d98a878ac9971"
+    if Hardware::CPU.intel?
+      url "https://github.com/kitagry/kj/releases/download/0.5.0/kj_0.5.0_Darwin_64bit.tar.gz"
+      sha256 "dfdecd06a09b17a05806ef8d9c4df7a8cfda8884ad824415a3fd5da8a284a6a1"
 
       def install
         bin.install "kj"
       end
     end
-    on_arm do
-      url "https://github.com/kitagry/kj/releases/download/0.4.0/kj_0.4.0_Darwin_ARM64.tar.gz"
-      sha256 "e0f80bb43371cbc19e6e0ef6dbb9c0c0aabaa0da2f583ffc03293a5b74d21639"
+    if Hardware::CPU.arm?
+      url "https://github.com/kitagry/kj/releases/download/0.5.0/kj_0.5.0_Darwin_ARM64.tar.gz"
+      sha256 "01886fa97cec33c27052c872c69394d86e57fe6404b5bdb2e4033009dab6455b"
 
       def install
         bin.install "kj"
@@ -27,20 +27,20 @@ class Kj < Formula
   end
 
   on_linux do
-    on_intel do
+    if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/kitagry/kj/releases/download/0.4.0/kj_0.4.0_Linux_64bit.tar.gz"
-        sha256 "76fd7e75883ceae7649258a628cb8a512106147789c09c9074845f219b18421b"
+        url "https://github.com/kitagry/kj/releases/download/0.5.0/kj_0.5.0_Linux_64bit.tar.gz"
+        sha256 "7b9a0db8479c46b6ae520c7b51f055d7a954e7bd3ee856372263e8ab4686cd68"
 
         def install
           bin.install "kj"
         end
       end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/kitagry/kj/releases/download/0.4.0/kj_0.4.0_Linux_ARM64.tar.gz"
-        sha256 "9e4cf544d56439d67b75564b4773e596f0c9fede249397432d0fd1a8834137e7"
+        url "https://github.com/kitagry/kj/releases/download/0.5.0/kj_0.5.0_Linux_ARM64.tar.gz"
+        sha256 "1bba4c362e6105b28e0c97917742a632f487595e5d6cabc1de20e7bdf76ac254"
 
         def install
           bin.install "kj"
